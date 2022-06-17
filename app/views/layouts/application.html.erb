@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Yami's Blog</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <section class="layout">
+      <header class="p-2">
+        <nav class="nav" >
+          <%=link_to root_path, class:"nav-link" do %>
+            <%= image_tag "PizzaBeagle.png", height: 35 %>
+          <% end %> 
+          <%= link_to "Inicio", root_path, class:"nav-link" %>
+          <%= link_to "Artículos", posts_path, class:"nav-link" %>
+        </nav>
+      </header>
+      <main>
+        <%= yield %>
+      </main>
+    <%= render "footer" %>
+    </section>
+  </body>
+</html>

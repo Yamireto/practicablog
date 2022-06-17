@@ -1,0 +1,20 @@
+<p style="color: green"><%= notice %></p>
+
+<div class="cover mb-4 p-4"> 
+  <h1 class="textshadow" > Mi blog personal</h1>
+  <h6 class="textshadow"> Y M S C </h6>
+</div>
+
+
+
+<div id="posts">
+  <% @posts.each do |p| %>
+    <%= render post %>
+    <%#= render partial:"posts/post", objet: p %>
+    <p>
+      <%= link_to "Show this post", p %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New post", new_post_path %>
